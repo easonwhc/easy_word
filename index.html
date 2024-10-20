@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word</title>
+    <link rel="stylesheet" href="b.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="menu-bar">
+            <div class="dropdown">
+                <button style="font-size: 20px;">檔案</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="newDocument()">新增</a>
+                    <a href="#" onclick="saveDocument()">儲存</a>
+                    <a href="#" onclick="document.getElementById('fileInput').click();">載入</a>
+                    <input type="file" id="fileInput" , style="display:  none;">
+                </div>
+            </div>
+        </div>
+        <div class="toolbar">
+            <select id="fontSelect">
+                <option value="Arial">Arial</option>
+                <option value="Helvetica">Helvetica</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="微軟正黑體">微軟正黑體</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Tahoma">Tahoma</option>
+                <option value="Palatino">Palatino</option>
+                <option value="Garamond">Garamond</option>
+                <option value="Trebuchet MS">Trebuchet MS</option>
+                <option value="Impact">Impact</option>
+                <option value="Comic Sans MS">Comic Sans MS</option>
+                <option value="Lucida Console">Lucida Console</option>
+                <option value="Franklin Gothic Medium">Franklin Gothic Medium</option>
+            </select>
+
+            <input type="number" id="fontSizeInput" placeholder="字體大小">
+            <button id="applyFontSizeBtn">套用大小</button>
+
+            <button data-command="bold"><strong>B</strong></button>
+            <button data-command="italic"><em>I</em></button>
+            <button data-command="underline"><u>U</u></button>
+            <input type="color" id="colorPicker">
+            <button data-command="justifyLeft">靠左</button>
+            <button data-command="justifyCenter">置中</button>
+            <button data-command="justifyRight">靠右</button>
+            <button data-command="insertUnorderedList">項目符號</button>
+            <button data-command="insertOrderedList">編號列表</button>
+            <button onclick="insertTable();">插入表格</button>
+            <input type="file" id="imageInput" accept="image/*" style="display: none;">
+            <button onclick="document.getElementById('imageInput').click();">插入圖片</button>
+        </div>
+        <div class="editor" id="editor" contenteditable="true">
+            在這裡開始輸入...
+        </div>
+    </div>
+
+
+
+    <script src="c.js"></script>
+</body>
+
+</html>
